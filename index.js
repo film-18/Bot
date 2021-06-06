@@ -7,6 +7,8 @@ const Discord = require('discord.js');
 
 const img = require("./image.json");
 
+// frendPic = []
+
 // create a new Discord client
 const client = new Discord.Client();
 
@@ -45,9 +47,17 @@ client.on('message', async message => {
         let pic = img.filter(element => {
             if (element.name === x) {
                 return element.url
-            }
+            } 
         })
-        console.log(pic.url);
+        let defaultUrl = ""; 
+        if (pic.length === 0) {
+            defaultUrl = "https://media.discordapp.net/attachments/824631778429763585/842424663316365333/image0.jpg?width=528&height=939"
+        }
+        else {
+            defaultUrl = pic[0].url
+        }
+        // let url = pic?pic[0].url:"film suay"
+        console.log(pic);
 
         // let botMes = ""
         // x.forEach(element => {
@@ -58,28 +68,27 @@ client.on('message', async message => {
         const embed = {
             "title": "Crytocurrency",
             "description": "```" + x + "```",
-            "url": "https://discordapp.com",
+            "url": defaultUrl,
             "color": 578404,
             "timestamp": "2021-06-06T09:54:36.810Z",
             "footer": {
-                "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-                "text": "footer text"
+                "icon_url": defaultUrl,
+                "text": "fbbp"
             },
             "thumbnail": {
-                "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+                "url": defaultUrl
             },
             "image": {
-                "url": pic[0].url
+                "url": defaultUrl
             },
             "author": {
-                "name": "author name",
+                "name": "fbbp",
                 "url": "https://discordapp.com",
-                "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+                "icon_url": defaultUrl
             },
             "fields": [
                 {
-                    "name": "❤",
-                    "value": x
+                    "name": "❤ " + x,
                 },
                 {
                     "name": "<:thonkang:219069250692841473>",
