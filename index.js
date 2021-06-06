@@ -40,7 +40,7 @@ client.on('message', async message => {
         message.channel.send('!fm name coin');
     } else if (command === 'fm') {
         let word = message.content.split(' ')[1];
-        let page = await axios.get("https://api.lunarcrush.com/v2?data=assets&key=2ywt4zlvbnv50s36bv6uyj&symbol=" + word)
+        let page = await axios.get("https://api.lunarcrush.com/v2?data=assets&key=" + config.keyAPI + "&symbol=" + word)
         console.log(word)
 
         let x = page.data.data[0].name
