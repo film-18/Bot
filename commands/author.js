@@ -1,12 +1,16 @@
+
+
 let author = (message) => {
     const embed = {
-        "title": fmmm,
-        "description": ,
+        "title": "fmmm",
+        "description": "`Owner of Henlo ซ้อฟิล์มสุดสวย`",
         "color": 8584931,
         "footer": {
-            "text": "👏 "
+            "text": "hope you like my Henlo " + "❤" 
         },
-        "timestamp": Date(),
+        "thumbnail": {
+            "url": "https://avatars.githubusercontent.com/u/56312158?v=4"
+        },
         "fields": [
             {
                 "name": "Github",
@@ -14,12 +18,12 @@ let author = (message) => {
                 "inline": true
             },
             {
-                "name": "24 H ต่ำสุด",
-                "value": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(coin.low24hr),
+                "name": "Instagram",
+                "value": "chlhfilm",
                 "inline": true
             }
         ]
     };
     message.channel.send({ embed });
 }
-module.exports = henlo
+module.exports = author

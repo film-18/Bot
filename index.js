@@ -33,8 +33,6 @@ client.on('message', async message => {
 
     if (command === 'henlo') {
         henlo(message)
-    } else if (command === 'server') {
-        message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
     } else if (command === 'help') {
         help(message)
     } else if (command === 'history') {
@@ -44,7 +42,7 @@ client.on('message', async message => {
     } else if (command === 'mycoin') {
         mycoin(message)
     } else if (command === 'author') {
-        mycoin(message)
+        author(message)
     }
      
 
