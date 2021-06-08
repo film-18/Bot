@@ -5,12 +5,11 @@ A world of Cryptocurrency
 
 # วิธีใช้
 สามารถเชิญบอทเข้า Discord Server ได้จาก link
-https://discord.com/api/oauth2/authorize?client_id=850953197472579595&permissions=0&scope=bot
+- https://discord.com/api/oauth2/authorize?client_id=850953197472579595&permissions=0&scope=bot
 
 
 # สำหรับเริ่มโปรเจค
 ` npm install `
-` firebase & token ` ติดต่อเจ้าของบอท
 _โดย_** https://facebook.com/kanlaya.puttasupha
 _ข้อมูลจาก_** https://api.bitkub.com
 
