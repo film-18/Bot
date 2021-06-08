@@ -10,6 +10,6 @@ A world of Cryptocurrency
 
 # สำหรับเริ่มโปรเจค
 - ` npm install `
-- _โดย_** https://facebook.com/kanlaya.puttasupha
-- _ข้อมูลจาก_** https://api.bitkub.com
+- _โดย_ https://facebook.com/kanlaya.puttasupha
+- _ข้อมูลจาก_ https://api.bitkub.com
 
