@@ -1,4 +1,3 @@
-// const img = require("../image.json");
 const axios = require("axios")
 
 let info = async (message) => {
@@ -18,33 +17,43 @@ let info = async (message) => {
           
             console.log(element.info)
             let film1234 = element.info.split(' ')
-            coinName = film1234[film1234.length - 1]
+            coinName = film1234.slice(3).join(' ')
+            
         }
     });
 
-
-    const embed = {
-        "title": coinName,
-        "description": "```"  + new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(coin.last) + "```",
-        "color": 578404,
-        "footer": {
-            "text": "👏 "
-        },
-        "timestamp": Date(),
-        "fields": [
-            {
-                "name": "24 H สูงสุด",
-                "value": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(coin.high24hr),
-                "inline": true
+    if (coin) {
+        const embed = {
+            "title": coinName,
+            "description": "```" + "THB " + coin.last + "```",
+            "color": 7536522,
+            "footer": {
+                "text": "👏 "
             },
-            {
-                "name": "24 H ต่ำสุด",
-                "value": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' }).format(coin.low24hr),
-                "inline": true
-            }
-        ]
-    };
-    message.channel.send({ embed });
+            "timestamp": Date(),
+            "fields": [
+                {
+                    "name": "24 H สูงสุด",
+                    "value": new Intl.NumberFormat('th-TH', { maximumSignificantDigits: 3 }).format(coin.high24hr),
+                    "inline": true
+                },
+                {
+                    "name": "24 H ต่ำสุด",
+                    "value": new Intl.NumberFormat('th-TH', { maximumSignificantDigits: 3 }).format(coin.low24hr),
+                    "inline": true
+                }
+            ]
+        };
+        message.channel.send({ embed });
+    } else {
+        const embed = {
+            "title": "ไม่พบเหรียญนี้ค่ะ 😉",
+            "color": 7536522,
+        };
+        message.channel.send({ embed });
+    }
+
+
 }
 
 module.exports = info

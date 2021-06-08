@@ -4,9 +4,9 @@ let author = (message) => {
     const embed = {
         "title": "fmmm",
         "description": "`Owner of Henlo ซ้อฟิล์มสุดสวย`",
-        "color": 8584931,
+        "color": 7536522,
         "footer": {
-            "text": "hope you like my Henlo " + "❤" 
+            "text": "hope you like my Henlo  ❤ "
         },
         "thumbnail": {
             "url": "https://avatars.githubusercontent.com/u/56312158?v=4"

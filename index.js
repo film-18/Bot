@@ -9,10 +9,13 @@ const info = require("./commands/info");
 const mycoin = require("./commands/mycoin");
 const help = require("./commands/help");
 const author = require("./commands/author");
+const addcoin = require("./commands/addcoin");
+const removecoin = require("./commands/removecoin");
 
 const Discord = require('discord.js');
-
-
+const cron = require('node-cron');
+const admin = require("./firebase");
+const firestore = admin.firestore()
 
 const client = new Discord.Client();
 
@@ -43,9 +46,22 @@ client.on('message', async message => {
         mycoin(message)
     } else if (command === 'author') {
         author(message)
+    } else if (command === 'add') {
+        addcoin(message)
+    } else if (command === 'remove') {
+        removecoin(message)
     }
      
 
 
     return console.log('end')
 });
+
+cron.schedule('0 59 23 * * *', async () => {
+    let ticker = await axios.get("https://api.bitkub.com/api/market/ticker")
+    firestore.collection('histories').add ({
+        date : admin.firestore.Timestamp.now(),
+        data : ticker.data
+    })
+    console
+})
