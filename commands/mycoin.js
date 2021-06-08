@@ -33,7 +33,7 @@ let mycoin = async (message) => {
                 "timestamp": Date(),
                 "fields": coinsPrice.length > 0 ? coinsPrice : {
                     "name": "ไม่พบเหรียญ :cry:",
-                    "value": "`!addcoin <coin name>` - เพิ่มเหรียญ",
+                    "value": "`!add <coin name>` - เพิ่มเหรียญ",
                     "inline": false
                 }
 
